@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function onSubmit(){
+            var mobileno=document.forms["myForm"]["mob"].value;
+            if(mobileno.length==10){
+                window.location.href="Submit.html"; 
+                return false;
+            }
+            else{
+                var x=document.getElementById("invalid");
+                x.innerHTML="Invalid number"
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <h2 class="heading" style="font-family: monospace;font-size: 30px;margin-top: 10px;">REGISTRATION FORM</h2>
+            <div class="form-elements">
+                <form name="myForm" onsubmit="return onSubmit()">
+                    <h3 class="input-head">Name</h3><br>
+                    <input type="text" class="input" required="true">
+                    <br>
+                    <h3 class="input-head">Email</h3><br>
+                    <input type="text" class="input">
+                    <br>
+                    <h3 class="input-head">Mobile Number</h3><br>
+                    <input type="number" class="input" name="mob">
+                    <br>
+                    <p id="invalid"></p>
+                    <h3 class="input-head">Class</h3><br>
+                    <input type="text" class="input">
+                    <br>
+                    <h3 class="input-head">Division</h3><br>
+                    <input type="text" class="input">
+                    <br>
+                    <button class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
